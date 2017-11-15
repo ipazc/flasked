@@ -87,7 +87,7 @@ Also, when a variable is defined in an entry URL, the class method's need to ref
         def get(self, variable):
             return variable
 
-    flasked["/route2/<variable>/" = Route3
+    flasked["/route2/<variable>/"] = Route3
 
 
 In order to run flask, it is only required to execute the `run()` method. It has the same arguments as a `Flask app run()`:

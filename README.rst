@@ -16,6 +16,8 @@ How to create an API rest faster than this?
 
 .. code:: python
 
+    from flasked import Flasked
+
     >>> class Root():
     ...    def get(self):
     ...        return "This is the result"
@@ -47,7 +49,7 @@ route with the class that manages the route. Example:
     flasked["/route2/<variable>/" = Route3
 
 
-The routes available can be iterated in the same way as a dict's content:
+The routes available can be iterated in the same way as a Python's dict:
 
  .. code:: python
 
@@ -56,8 +58,8 @@ The routes available can be iterated in the same way as a dict's content:
     for route in flasked:
         print(route)
 
-    for route, class in flasked.items():
-        print("{}: {}".format(route, class))
+    for route, cls in flasked.items():
+        print("{}: {}".format(route, cls))
 
 
 The classes that manages the routes *do not require* to inherit from any special class, since `Flasked` is able to manage them.
@@ -77,7 +79,7 @@ Nonetheless, they have access to all the methods and attributes that a `Resource
     ...        return {"result": "result for DELETE"}
     ...    ...
 
-Also, when a a variable is defined in an entry URL, the class method's need to reflect it:
+Also, when a variable is defined in an entry URL, the class method's need to reflect it:
 
 .. code:: python
 
@@ -129,6 +131,8 @@ If the class that manages a route requires arguments to be injected in the const
 
 **IMPORTANT:** Note that if the first way is taken, the `argument1` can't be a dictionary that contains the keywords 'args' or 'kwargs'.
 Otherwise, it will be used as a source for the `args` and `kwargs` of the initializer. It is always preferred to use the second mixed with the third way.
+
+This package is completely compatible with flask_restful. For more information, check `Flask_Restful <https://github.com/flask-restful/>`_.
 
 
 LICENSE

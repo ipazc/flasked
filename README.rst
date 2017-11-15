@@ -46,7 +46,7 @@ route with the class that manages the route. Example:
 
     flasked["/"] = RouteRoot
     flasked["/route2/" = Route2
-    flasked["/route2/<variable>/" = Route3
+    flasked["/route2/<variable>/"] = Route3
 
 
 The routes available can be iterated in the same way as a Python's dict:

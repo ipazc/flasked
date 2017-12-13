@@ -1,5 +1,5 @@
 =============
-Flasked 0.0.1
+Flasked 0.0.2
 =============
 
 `Flasked` is a package designed to ease the creation of a REST API. It uses `Flask` and `Flask-Restful` in the

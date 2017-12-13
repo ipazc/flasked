@@ -25,7 +25,7 @@
 
 
 from flask import Flask
-from flask_restful import Api, Resource
+from flask_restful import Api, Resource, abort
 
 __author__ = 'Iván de Paz Centeno'
 
@@ -68,12 +68,15 @@ class Flasked(object):
         else:
             parent = value
 
-        class Generic(Resource, parent):
-            _args = args
-            _kwargs = kwargs
-            def __init__(self):
-                Resource.__init__(self)
-                parent.__init__(self, *self._args, **self._kwargs)
+        # We want to create a Resource class with the methods the user created in the parent.
+        generic_attributes = {s: getattr(parent, s) for s in dir(parent) if not s.startswith("_") and callable(getattr(parent, s))}
+
+        def generic__init__(self):
+            parent.__init__(self, *self._args, **self._kwargs)
+
+        generic_attributes.update({'_args': args, '_kwargs': kwargs, '__init__': generic__init__})
+
+        Generic = type("Generic", (Resource, ), generic_attributes)
 
         if key in self.api.resources:
             self.api.resources.remove(key)

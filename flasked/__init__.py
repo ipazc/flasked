@@ -76,7 +76,7 @@ class Flasked(object):
 
         generic_attributes.update({'_args': args, '_kwargs': kwargs, '__init__': generic__init__})
 
-        Generic = type("Generic", (Resource, ), generic_attributes)
+        Generic = type(parent.__name__, (Resource, ), generic_attributes)
 
         if key in self.api.resources:
             self.api.resources.remove(key)

@@ -39,7 +39,7 @@ if sys.version_info < (3, 4, 1):
 
 
 setup(name='flasked',
-      version='0.0.3',
+      version='0.0.4',
       description='Flasked is a package for creating an API-REST even easier than with Flask_Restful.',
       long_description=readme(),
       url='http://github.com/ipazc/flasked',

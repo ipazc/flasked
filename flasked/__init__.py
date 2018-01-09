@@ -69,7 +69,8 @@ class Flasked(object):
             parent = value
 
         # We want to create a Resource class with the methods the user created in the parent.
-        generic_attributes = {s: getattr(parent, s) for s in dir(parent) if not s.startswith("_") and callable(getattr(parent, s))}
+        #generic_attributes = {s: getattr(parent, s) for s in dir(parent) if not s.startswith("_") and callable(getattr(parent, s))}
+        generic_attributes = {s: getattr(parent, s) for s in dir(parent)}
 
         def generic__init__(self):
             parent.__init__(self, *self._args, **self._kwargs)

@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 # MIT License
 #
@@ -23,27 +21,3 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from setuptools import setup, find_packages
-from flasked.metadata import __version__, __author__, __author_email__
-
-
-setup(
-    name='Flasked',
-    version=__version__,
-    author=__author__,
-    author_email=__author_email__,
-    description='A package designed to ease building HTTP REST APIs out-of-the-box, suitable for interactive environments like Jupyter Lab',
-    long_description=open('README.md').read(),
-    long_description_content_type='text/markdown',
-    url='https://github.com/ipazc/flasked',
-    packages=find_packages(),
-    install_requires=[
-        'Flask>=3.0.2',
-    ],
-    classifiers=[
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
-    ],
-    python_requires='>=3.6',
-)

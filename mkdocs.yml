@@ -1,0 +1,32 @@
+extra:
+    version: 0.1.0
+    project_name: Flasked
+    project_name_lowercase: flasked
+
+site_name: Flasked Documentation
+site_url: https://github.com/ipazc/flasked
+site_description: 'A dynamic Flask extension for interactive route management and server control.'
+site_author: 'Iván de Paz Centeno'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+theme:
+  name: material
+
+repo_url: https://github.com/ipazc/flasked
+
+nav:
+  - Overview: index.md
+  - Getting Started: getting_started.md
+  - Route Management: routes_management.md
+
+plugins:
+  - search
+  - macros
